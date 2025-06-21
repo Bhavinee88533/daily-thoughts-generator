@@ -7,12 +7,16 @@
     <link rel="stylesheet" href="./output.css">
 </head>
 <body class="flex items-center justify-center h-200 bg-gradient-to-br from-pink-400 via-purple-500 to-indigo-600 p-2">
-    <div class="bg-white/40 text-black-800/80 w-300 h-120 rounded-lg shadow-xl">
-        <div class="w-300 h-130 overflow-y-auto">
-            <h2 class="text-[35px] m-15 font-bold mb-4 ">Today's Thoughts</h2>
-            <p id="quote" class="p-2 text-[25px] italic text-black">Loading...</p>
+    <div class="bg-white/40 text-black-800/80 w-full max-w-md sm:max-w-lg rounded-lg shadow-xl">
+        <div class="max-h-[60vh] overflow-y-auto">
+            <h2 class="text-2xl sm:text-3xl md:text-4xl m-15 font-bold mb-4 ">Today's Thoughts</h2>
+            <p id="quote" class="p-2 text-lg sm:text-xl italic text-black">Loading...</p>
         </div>
-        <button id="newQuoteBtn" class="h-30 w-30 bg-white/50 rounded-xl font-bold m-10 p-2">New Thoughts</button>
+        <div class="flex justify-center mt-4">
+      <button id="newQuoteBtn" class="bg-white/50 font-semibold p-2 py-2 px-4 rounded-xl transition duration-300">
+        New Thoughts
+      </button>
+    </div>
     </div>
 <script src="script.js"></script>
 </body>
