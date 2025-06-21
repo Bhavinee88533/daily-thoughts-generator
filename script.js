@@ -1,13 +1,15 @@
-async function fetchThought() {
+async function fetchThought(n) {
   try {
     const res = await fetch('data.json'); 
     const data = await res.json();       
 
-    const posts = data.data.children;     
-    const todayIndex = new Date().getDate() % posts.length;
+    const posts = data.data.children;
+    const length = posts.length;
+    
+    const todayIndex = n % (length - 2); 
     const thought1 = posts[todayIndex].data.title;
-    const thought2 = posts[todayIndex+1].data.title;  
-    const thought3 = posts[todayIndex+2].data.title;  
+    const thought2 = posts[todayIndex + 1].data.title;  
+    const thought3 = posts[todayIndex + 2].data.title;  
 
     document.getElementById('quote').innerHTML = `
       <ul class="flex flex-col">
@@ -22,4 +24,11 @@ async function fetchThought() {
   }
 }
 
-fetchThought();
+
+fetchThought(new Date().getDate());
+
+
+document.getElementById('newQuoteBtn').addEventListener('click', () => {
+  const random = Math.floor(Math.random()*97);
+  fetchThought(random);
+});
